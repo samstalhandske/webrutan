@@ -151,9 +151,10 @@
             console.log(window.scrollY);
 
             var element = document.getElementById("btn");
+            var cancelbtn = document.getElementById("cancel");
 
-            if (element) {
-                if (window.scrollY <= 0) {
+            if (element && cancelbtn) {
+                if (window.scrollY <= 0 && cancelbtn.style.display == "none") {
                     element.style.display = "block";
                 }
                 else
