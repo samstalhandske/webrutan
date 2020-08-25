@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
+body {
+    font-family: 'Alata', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+#logo {
+    width: 150px;
+    position: absolute;
+    top: 14px;
+    /* left: 1%; */
+    left: 20px;
+}
+
+.nav-bar {
+    height: 75px;
+    width: 100%;
+    /* background-color: cyan; */
+}
+
+.nav-bar ul {
+    float: right;
+    margin-right: 25px;
+    margin-bottom: 0px;
+}
+
+.nav-bar ul li {
+    display: inline-block;
+    line-height: 45px;
+    margin: 0 15px;
+}
+
+.nav-bar ul li a {
+    position: relative;
+    list-style: none;
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+}
+
+.nav-bar ul li a:hover {
+    color: #F7931E;
+}
+
+#footer a {
+    color: black;
+    font-size: 16px;
+    text-decoration: none;
+    padding: 5px 15px;
+}
+
+#footer a:hover {
+    color: white;
+}
+
+.wrapper {
+    text-align: center;
+    /* background-color: red; */
+    width: 50%;
+    margin: 0 auto;
+}
+
+.wrapper img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+h1 {
+    font-size: 250%;
+}
+
+p {
+    font-size: 150%;
+    text-align: justify;
+}
+
+.active {
+    font-weight: bold;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    /* background-color: purple; */
+}
+
+body.noScroll {
+    /* ...or body.dialogShowing */
+    overflow: hidden;
+}
+
+#container {
+    min-height: 100%;
+    position: relative;
+}
+
+#header {
+    /* background-color: yellow; */
+}
+
+#body {
+    padding: 20px;
+    padding-bottom: 10%;
+}
+
+#footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 27px;
+    background: #F7931E;
+    margin: auto;
+    text-align: center;
+}
+
+label #btn,
+label #cancel {
+    color: black;
+    font-size: 30px;
+    float: right;
+    line-height: 70px;
+    margin-right: 20px;
+    cursor: pointer;
+    display: none;
+}
+
+#check {
+    display: none;
+}
+
+@media screen and (max-width: 1118) {
+    #logo {
+        left: 8%;
+    }
+}
+
+@media screen and (max-width: 860px) {
+    label #btn {
+        display: block;
+    }
+    .wrapper {
+        width: 90%;
+    }
+    .nav-bar ul {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: white;
+        top: 60px;
+        left: -200%;
+        text-align: left;
+        transition: all .25s;
+    }
+    .nav-bar ul li {
+        display: block;
+    }
+    .nav-bar ul li a {
+        font-size: 30px;
+    }
+    .nav-bar ul li a.active {
+        left: -10px;
+    }
+    #check:checked~ul {
+        left: 0%;
+    }
+    #check:checked~label #btn {
+        display: none;
+    }
+    #check:checked~label #cancel {
+        display: block;
+    }
+}
