@@ -136,34 +136,30 @@
     <script>
         function toggleScroll() {
             var element = document.getElementById("mainBody");
+            var btn = document.getElementById("btn");
 
             if (element.classList.contains("noScroll")) {
                 element.classList.remove("noScroll");
+                btn.style.display = "block";
             } else {
                 element.classList.add("noScroll");
+                btn.style.display = "none";
+
             }
         }
     </script>
     <script>
         window.onscroll = function (ev) {
-            // if ((window.innerHeight + window.scrollY) >= document.body.scrollHeight) {
-            // you're at the bottom of the page
             console.log(window.scrollY);
 
-            var element = document.getElementById("btn");
-            var cancelbtn = document.getElementById("cancel");
+            var mbody = document.getElementById("mainBody");
 
-            if (element && cancelbtn) {
-                if (window.scrollY <= 0 && cancelbtn.style.display == "none") {
-                    element.style.display = "block";
-                }
-                else
-                {
-                    element.style.display = "none";
-                }
+            if (window.scrollY <= 0) {
+                btn.style.display = "block";
             }
-
-            // }
+            else {
+                btn.style.display = "none";
+            }
         };
     </script>
 </body>
