@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
-    
+
     <title>Skräddarsydd webbutveckling - webrutan</title>
 
     <link rel="icon" type="image/png" href="images/favicon.ico">
@@ -23,7 +23,7 @@
                 <label for="check">
                     <i class="fa fa-bars" id="btn"></i>
                     <i class="fa fa-times" id="cancel"></i>
-                </label> 
+                </label>
 
                 <a href=""><img src="images/logo.png" id="logo"></a>
                 <ul>
@@ -45,8 +45,11 @@
             <div class="wrapper">
                 <h1>Välkommen!</h1>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                    in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                    aliquip ex ea commodo consequat. Duis aute irure dolor
+                    in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+                    occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                 </p>
             </div>
 
@@ -78,7 +81,7 @@
                 isvisible: !1,
                 shouldvisible: !1
             },
-            scrollup: function() {
+            scrollup: function () {
                 this.cssfixedsupport || this.$control.css({
                     opacity: 0
                 });
@@ -87,7 +90,7 @@
                     scrollTop: t
                 }, this.setting.scrollduration)
             },
-            keepfixed: function() {
+            keepfixed: function () {
                 var t = jQuery(window),
                     o = t.scrollLeft() + t.width() - this.$control.width() - this.controlattrs.offsetx,
                     s = t.scrollTop() + t.height() - this.$control.height() - this.controlattrs.offsety;
@@ -96,7 +99,7 @@
                     top: s + "px"
                 })
             },
-            togglecontrol: function() {
+            togglecontrol: function () {
                 var t = jQuery(window).scrollTop();
                 this.cssfixedsupport || this.keepfixed(), this.state.shouldvisible = t >= this.setting.startline ? !0 : !1, this.state.shouldvisible && !this.state.isvisible ? (this.$control.stop().animate({
                     opacity: 1
@@ -104,8 +107,8 @@
                     opacity: 0
                 }, this.setting.fadeduration[1]), this.state.isvisible = !1)
             },
-            init: function() {
-                jQuery(document).ready(function(t) {
+            init: function () {
+                jQuery(document).ready(function (t) {
                     var o = scrolltotop,
                         s = document.all;
                     o.cssfixedsupport = !s || s && "CSS1Compat" == document.compatMode && window.XMLHttpRequest, o.$body = t(window.opera ? "CSS1Compat" == document.compatMode ? "html" : "body" : "html,body"), o.$control = t('<div id="topcontrol">' + o.controlHTML + "</div>").css({
@@ -116,13 +119,13 @@
                         cursor: "pointer"
                     }).attr({
                         title: "Scroll to Top"
-                    }).click(function() {
+                    }).click(function () {
                         return o.scrollup(), !1
                     }).appendTo("body"), document.all && !window.XMLHttpRequest && "" != o.$control.text() && o.$control.css({
                         width: o.$control.width()
-                    }), o.togglecontrol(), t('a[href="' + o.anchorkeyword + '"]').click(function() {
+                    }), o.togglecontrol(), t('a[href="' + o.anchorkeyword + '"]').click(function () {
                         return o.scrollup(), !1
-                    }), t(window).bind("scroll resize", function(t) {
+                    }), t(window).bind("scroll resize", function (t) {
                         o.togglecontrol()
                     })
                 })
@@ -140,6 +143,27 @@
                 element.classList.add("noScroll");
             }
         }
+    </script>
+    <script>
+        window.onscroll = function (ev) {
+            // if ((window.innerHeight + window.scrollY) >= document.body.scrollHeight) {
+            // you're at the bottom of the page
+            console.log(window.scrollY);
+
+            var element = document.getElementById("btn");
+
+            if (element) {
+                if (window.scrollY <= 0) {
+                    element.style.display = "block";
+                }
+                else
+                {
+                    element.style.display = "none";
+                }
+            }
+
+            // }
+        };
     </script>
 </body>
 
