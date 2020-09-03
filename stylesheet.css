@@ -77,6 +77,13 @@ p {
     font-size: 150%;
 }
 
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
 .active {
     font-weight: bold;
 }
@@ -99,12 +106,13 @@ body.noScroll {
     position: relative;
 }
 
+
 #header {
     /* background-color: yellow; */
 }
 
 #body {
-    padding-bottom: 10%;
+    /* padding-bottom: 10%; */
 }
 
 #footer {

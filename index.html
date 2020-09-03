@@ -45,12 +45,11 @@
                 <img src="https://i.imgur.com/8n70PjM.png" class="fullImage">
             </div>
 
-            <div class="wrapper">
+            <div class="wrapper centered" id="welcomeText">
                 <h1>Välkommen till webrutan!</h1>
                 <p>
-                    Vi erbjuder en skräddarsydd lösning i form av tex hemsidor, appar eller grafiska paket.<br>
-                    Vi hjälper dig att modernisera och utforska nya idéer, allt för att <b>DITT</b> företag ska nå ut
-                    till fler!
+                    Vi utvecklar och skapar hemsidor, appar och <br>grafiska element.<br><br>
+                    Har er verksamhet rum för teknisk förbättring?<br>Då är vi rätt för er!
                 </p>
             </div>
 
@@ -133,6 +132,18 @@
             }
         };
         scrolltotop.init();
+    </script>
+    <script>
+        window.onload = function () {
+            var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+            if (isMobile) {
+                var wtext = document.getElementById("welcomeText");
+
+                if (wtext.classList.contains("centered")) {
+                    wtext.classList.remove("centered");
+                }
+            }
+        };
     </script>
     <script>
         function toggleScroll() {
